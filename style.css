@@ -170,14 +170,20 @@ p {
 }
 
 .img-rounded:hover {
-	-webkit-transform: scale(2);
-	-moz-transform: scale(2);
-	-o-transform: scale(2);
-	transform: scale(2);
+	-webkit-transform: scale(1.7);
+	-moz-transform: scale(1.7);
+	-o-transform: scale(1.7);
+	transform: scale(1.7);
 	position: absolute;
 	z-index: 99;
 }
 
 .generatedMemes {
 	margin: 10px;
+}
+
+label {
+	font-size: 10px;
+	font-style: italic;
+	font-weight: normal;
 }
