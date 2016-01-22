@@ -65,7 +65,13 @@ var main = function() {
 				showWarning = false;
 			};
 			var randomImg = Math.floor((Math.random() * 1219) + 1);
-			memeImg.src = 'assets/pepe/pepe' + randomImg + '.png';
+			if (randomImg < 500) {
+				memeImg.src = 'assets/pepe/pepe1_499/pepe' + randomImg + '.png';
+			} else if (randomImg >= 500 && randomImg < 1000) {
+				memeImg.src = 'assets/pepe/pepe500_999/pepe' + randomImg + '.png';
+			} else if (randomImg >= 1000) {
+				memeImg.src = 'assets/pepe/pepe1000_1500/pepe' + randomImg + '.png';
+			};
 			textReplace("", "");
 		} else {
 			var img = $(event.currentTarget).attr('src');
