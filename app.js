@@ -1,10 +1,10 @@
 // to do: create grid under inputs for a grid of templates - DONE
-// to do: templates change the deafult text to their intent schema 
+// to do: templates change the deafult text to their intent schema -DONE
 // above fold grid updates to most used icons - no longer wanted as it looks better below fold
 // to do: canvas is saving background color too, figure out how to autosize the preview div - DONE
 // to do: fix bottom text shading - done ( html2canvas was not shading multiple eliments so i wrote my own function draw canvas)
 // to do: mouse hover over thumbnail memes will preview them with meme syntax - DONE - text in thumbnail does not look good
-// to do: option to not show dialog again as memes generated will be at the bottom
+// to do: option to not show dialog again as memes generated will be at the bottom - DONE
 // to do: make an upload option - DONE
 // to do: make a copy img from clipboard option
 // to do: alert if text is too long "memes should not be that long"
@@ -29,8 +29,6 @@ var main = function() {
 		bottomTextDiv.setAttribute("style","width:" + image.width + "px");
 	};
 	imgResizer(memeImg);
-
-	console.log($(window).width());
 
 	var topCopy = "";
 	$("#topTextInput").keyup(function() {
@@ -66,9 +64,9 @@ var main = function() {
 			};
 			var randomImg = Math.floor((Math.random() * 1219) + 1);
 			if (randomImg < 500) {
-				memeImg.src = 'assets/pepe/pepe1_499/pepe' + randomImg + '.png';
+				memeImg.src = 'assets/pepe/pepe0001_0499/pepe' + randomImg + '.png';
 			} else if (randomImg >= 500 && randomImg < 1000) {
-				memeImg.src = 'assets/pepe/pepe500_999/pepe' + randomImg + '.png';
+				memeImg.src = 'assets/pepe/pepe0500_0999/pepe' + randomImg + '.png';
 			} else if (randomImg >= 1000) {
 				memeImg.src = 'assets/pepe/pepe1000_1500/pepe' + randomImg + '.png';
 			};
@@ -309,16 +307,14 @@ var main = function() {
 			title: "meme at your own risk",
 			create: function (event, ui) {
 				var pane = $(this).dialog("widget").find(".ui-dialog-buttonpane");
-            	$("<label><input id='dontShowAgain' type='checkbox'/> Don't open again, memes generated will save at the bottom</label>").prependTo(pane)
+            	$("<label><input id='dontShowAgain' type='checkbox'> Don't open again, memes generated will save at the bottom</label>").prependTo(pane);
+            	$('#dontShowAgain').change(function() {
+            		dialogShow = false;
+            	})
 			},
 			buttons: {
 				"close": function () {
-					if ($('#dontShowAgain').checked === true) {
-						console.log("im in here")
-						dialogShow = false;
-					};
-					$(this).dialog('close');
-					console.log("poop" + dialogShow);
+					$(this).dialog('destroy');
 				}
 			}
 		});
@@ -334,7 +330,9 @@ var main = function() {
         newCanvas.height = memeImg.height;
         memesGenerated.appendChild(newCanvas);
         drawCanvas(newCanvas, memeImg, topCopy, bottomCopy);
-        memeDialog();
+        if (dialogShow === true) {
+        	memeDialog();
+        };
 	});
 
 	$(".btn").mouseup(function(){
