@@ -97,8 +97,8 @@ var main = function() {
 				case "scumbagsteve":
 					textReplace("something happens", "guy does scumbag thing");
 					break;
-				case "thirdworldskepticalkid":
-					textReplace("You're telling me (first world privilage thing)", "but you so and so (take for granted)");
+				case "shutupandtakemymoney":
+					textReplace("sees cool new product", "shut up and take my money");
 					break;
 				case "whatifitoldyou":
 					textReplace("what if I told you", "option/something most people don't consider");
@@ -145,8 +145,8 @@ var main = function() {
 				case "themostinterestingman":
 					textReplace("I don't always ...", "but when I do ...");
 					break;
-				case "thirdworldsuccess":
-					textReplace("Something not so good happens", "turns out sucessful in third world");
+				case "noneofmybusiness":
+					textReplace("observes something, sarcastic expression", "butt that's none of my business");
 					break;
 				case "wonka":
 					textReplace("condescendingly asks soemthing", "condescending follows up");
