@@ -26,11 +26,20 @@ html, body {
 }
 
 h3 {
-	display: inline;
-	float: right;
+	margin-bottom: 10px;
 	font-style: italic;
 	font-size: 15px;
 	color: #605389;
+}
+
+ol {
+  font: italic 1em Georgia, Times, serif;
+  color: #605389;
+}
+
+ol p {
+  font: normal .8em Arial, Helvetica, sans-serif;
+  color: #000000;
 }
 
 .meme {

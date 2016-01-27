@@ -8,6 +8,7 @@
 // to do: make an upload option - DONE
 // to do: make a copy img from clipboard option
 // to do: alert if text is too long "memes should not be that long"
+// to do: should i use document.ready?
 
 
 var main = function() {
@@ -158,7 +159,7 @@ var main = function() {
 					textReplace("I should ...", " ");
 					break;
 				case "overlyattachedgirlfriend":
-					textReplace("something something something", "(did some crazy girlfriend thing)");
+					textReplace("something something something", "(did some crazy overly attached spouse thing");
 					break;
 				case "notgoingtohappen":
 					textReplace("stop trying to make x happen", "its not going to happen");
@@ -248,6 +249,7 @@ var main = function() {
 		canvasDialog.height = memeImg.height;
 		$(dialogP).html("A collection of all your memes will be dispayled at the bottom of the page, <br>as long as you remain on the page.");
 		dialogDiv.appendChild(dialogP);
+		$("ol").clone().appendTo(dialogDiv);
 		dialogDiv.appendChild(canvasDialog);
 		var ctx = canvasDialog.getContext("2d");
 		ctx.drawImage(memeImg,0,0, memeImg.width, memeImg.height);
