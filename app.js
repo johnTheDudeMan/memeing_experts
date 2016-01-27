@@ -323,15 +323,14 @@ var main = function() {
 	};
 
 	$('#generateMeme').click(function() {
-        
         var newCanvas = document.createElement('canvas');
         newCanvas.id = "meme_" + memeSaves;
         newCanvas.className = "generatedMemes";
-        memeSaves ++;
         newCanvas.width = memeImg.width;
         newCanvas.height = memeImg.height;
         memesGenerated.appendChild(newCanvas);
         drawCanvas(newCanvas, memeImg, topCopy, bottomCopy);
+        memeSaves ++;
         if (dialogShow === true) {
         	memeDialog();
         };
