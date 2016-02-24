@@ -1,12 +1,5 @@
-// to do: create grid under inputs for a grid of templates - DONE
-// to do: templates change the deafult text to their intent schema -DONE
-// above fold grid updates to most used icons - no longer wanted as it looks better below fold
-// to do: canvas is saving background color too, figure out how to autosize the preview div - DONE
-// to do: fix bottom text shading - done ( html2canvas was not shading multiple eliments so i wrote my own function draw canvas)
-// to do: mouse hover over thumbnail memes will preview them with meme syntax - DONE - text in thumbnail does not look good
-// to do: option to not show dialog again as memes generated will be at the bottom - DONE
-// to do: make an upload option - DONE
 // to do: make a copy img from clipboard option
+// to do: copy to clipboard option
 // to do: alert if text is too long "memes should not be that long"
 // to do: should i use document.ready?
 
@@ -159,7 +152,7 @@ var main = function() {
 					textReplace("I should ...", " ");
 					break;
 				case "overlyattachedgirlfriend":
-					textReplace("something something something", "(did some crazy overly attached spouse thing");
+					textReplace("something something something", "did some crazy overly attached spouse thing");
 					break;
 				case "notgoingtohappen":
 					textReplace("stop trying to make x happen", "its not going to happen");
@@ -247,9 +240,9 @@ var main = function() {
 		var canvasDialog = document.createElement('canvas');
 		canvasDialog.width = memeImg.width;
 		canvasDialog.height = memeImg.height;
-		$(dialogP).html("A collection of all your memes will be dispayled at the bottom of the page, <br>as long as you remain on the page.");
+		$(dialogP).html("To <i>copy</i> or <i>save</i>, <b>Right Click</b> on the image.");
 		dialogDiv.appendChild(dialogP);
-		$("ol").clone().appendTo(dialogDiv);
+		$("#browserInstruct").clone().appendTo(dialogDiv);
 		dialogDiv.appendChild(canvasDialog);
 		var ctx = canvasDialog.getContext("2d");
 		ctx.drawImage(memeImg,0,0, memeImg.width, memeImg.height);
