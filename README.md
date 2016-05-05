@@ -1,7 +1,7 @@
 # Memeing Experts
 #### created by: John Cornici
 
-[Click here](http://johnthedudeman.github.io/memeing_experts/) to got the *Memeing Experts* webpage.
+View the [Memeing Experts](http://johnthedudeman.github.io/memeing_experts/) webpage, and let me know what you think.
 
 I created this meme generator to help me learn programing. I was never really into memes, but now I find myself using *Meming Experts* on a regular basis.
 
